@@ -1,0 +1,13 @@
+//////////////////////////////////////////////
+// Created by GrafskyZik on 11/30/22.////////
+////////////////////////////////////////////
+#include "dcalib.h"
+
+int	dcalen(char **array)
+{
+	int	i = 0;
+
+	while (array && array[i])
+		i++;
+	return (i);
+}
