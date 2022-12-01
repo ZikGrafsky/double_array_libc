@@ -14,5 +14,6 @@ char	**dcafree(char **arr);
 char	**dcabsort(char **arr);
 char	**dcaaddone(char *str, char **dst);
 char	**dcadup(char **src_dca);
+int		dcaswap(char **dca, int first_pos, int second_pos);
 
 #endif //DCALIB_H
