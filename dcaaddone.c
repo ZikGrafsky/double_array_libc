@@ -16,10 +16,10 @@ char	**dcaaddone(char *str, char **dst)
     i = 0;
     while (dst && i < dcalen(dst))
     {
-        tmp[i] = ft_strdup(dst[i]);
+        tmp[i] = strdup(dst[i]);
         i++;
     }
-    tmp[i++] = ft_strdup(str);
+    tmp[i++] = strdup(str);
     tmp[i] = NULL;
     dcafree(dst);
     return (tmp);
