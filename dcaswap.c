@@ -3,8 +3,6 @@
 ////////////////////////////////////////////
 #include "dcalib.h"
 
-#define DCA_INVALID_ARG -1
-
  int	dcaswap(char **dca, int first_pos, int second_pos){
 	int ret_code = 0;
 
@@ -14,6 +12,6 @@
 		dca[second_pos] = tmp;
 	}
 	else
-		ret_code = DCA_INVALID_ARG;
+		ret_code = -1;
 	return ret_code;
 }
