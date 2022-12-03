@@ -6,21 +6,17 @@
 char	**dcaaddone(char *str, char **dst)
 {
     int		i;
-    char	**tmp;
+    char	**tmp = NULL;
 
-    if (!str)
-        return (0);
-    tmp = (char **)malloc(sizeof (char *) * (dcalen(dst) + 2));
-    if (!tmp)
-        return (dst);
-    i = 0;
-    while (dst && i < dcalen(dst))
-    {
-        tmp[i] = strdup(dst[i]);
-        i++;
+    if (str && (tmp = (char **)malloc(sizeof (char *) * (dcalen(dst) + 2))) != NULL) {
+        i = 0;
+        while (dst && i < dcalen(dst)) {
+            tmp[i] = strdup(dst[i]);
+            i++;
+        }
+        tmp[i++] = strdup(str);
+        tmp[i] = NULL;
+        dcafree(dst);
     }
-    tmp[i++] = strdup(str);
-    tmp[i] = NULL;
-    dcafree(dst);
     return (tmp);
 }

@@ -8,15 +8,13 @@ char	**dcacalloc(int size)
     int		i;
     char	**tmp;
 
-    tmp = (char **)malloc(sizeof (char *) * size);
-    if (!tmp)
-        return (NULL);
-    i = 0;
-    while (i < size)
-    {
-        tmp[i] = NULL;
-        i++;
+    if ((tmp = (char **)malloc(sizeof (char *) * size)) != NULL) {
+        i = 0;
+        while (i < size) {
+            tmp[i] = NULL;
+            i++;
+        }
+        tmp[size] = NULL;
     }
-    tmp[size] = NULL;
     return (tmp);
 }
