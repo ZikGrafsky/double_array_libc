@@ -3,20 +3,15 @@
 ////////////////////////////////////////////
 #include "dcalib.h"
 
-char	**dcafree(char **arr)
+void dcafree(char **arr)
 {
-    int	i;
-
     if (arr && *arr) {
-        i = 0;
-        while (arr[i]) {
+        for (int i = 0; arr[i]; ++i) {
             if (arr[i])
                 free(arr[i]);
             arr[i] = NULL;
-            i++;
         }
         free(arr);
         arr = NULL;
     }
-    return (NULL);
 }

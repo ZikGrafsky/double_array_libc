@@ -10,7 +10,7 @@
 int		dcalen(char **array);
 char	**dcarotate(char **dca);
 char	**dcacalloc(int size);
-char	**dcafree(char **arr);
+void    dcafree(char **arr);
 char	**dcabsort(char **arr);
 char	**dcaaddone(char *str, char **dst);
 char	**dcadup(char **src_dca);
